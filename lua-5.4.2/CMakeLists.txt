@@ -53,7 +53,7 @@ target_compile_definitions(lua_static
     PUBLIC ${LUA_DEFINITIONS}
 )
 target_compile_options(lua_static
-    PRIVATE "-Wall" "-Wextra"
+    PRIVATE "-Wall" "-Wextra" "-fPIC"
 )
 
 if(LUA_BUILD_BINARY)
