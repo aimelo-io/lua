@@ -1,16 +1,25 @@
 {
     "name": "@pomelo/lua",
     "version": "0.0.1",
-    "description": "Build N-API native addon with CMake and node-addon-api C++ wrapper.",
-    "main": "hello.js",
-    "private": true,
+    "description": "lua node binding",
+    "main": "index.js",
+    "keywords": [
+        "lua",
+        "lua5.4.2",
+        "node-lua",
+        "node-lua-binding"
+    ],
     "dependencies": {
         "bindings": "~1.2.1",
-        "node-addon-api": "^1.0.0",
-        "node-pre-gyp": "^0.17.0"
+        "node-addon-api": "^1.0.0"
     },
     "scripts": {
         "install": "cmake-js compile",
         "test": "cmake-js compile && node test"
+    },
+    "homepage": "https://github.com/aimelo-io/lua",
+    "repository": {
+        "type": "https",
+        "url": "https://github.com/aimelo-io/lua.git"
     }
 }
