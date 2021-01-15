@@ -2,12 +2,12 @@
 
 ## 安装
 
-`npm install @pomelo/lua --save`
+`npm install @aimelo/lua --save`
 
 ## 接口
 
 ```ts
-declare export class PomeloLua {
+declare export class AimeloLua {
     constructor();
     doString(lua: string): { result: number; message: string };
 }
@@ -15,8 +15,8 @@ declare export class PomeloLua {
 
 ## 示例
 ```ts
-import { PomeloLua } from '@pomelo/lua';
-const lua = new PomeloLua();
+import { AimeloLua } from '@aimelo/lua';
+const lua = new AimeloLua();
 const {result, message} = lua.doString('result=0;message="success";');
 lua.close(); //不用时需要关闭
 ```

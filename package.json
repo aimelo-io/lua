@@ -1,5 +1,5 @@
 {
-    "name": "@pomelo/lua",
+    "name": "@aimelo/lua",
     "version": "0.0.1",
     "description": "lua node binding",
     "main": "index.js",
