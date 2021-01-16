@@ -49,7 +49,7 @@ Napi::Value PomeloLua::DoString(const Napi::CallbackInfo &info)
             .ThrowAsJavaScriptException();
     }
     lua_getglobal(m_luaState, "result");
-    const int result = lua_tonumber(m_luaState, -1);
+    const double result = lua_tonumber(m_luaState, -1);
     lua_getglobal(m_luaState, "message");
     const char *message = lua_tostring(m_luaState, -1);
     Napi::Object resp = Napi::Object::New(env);

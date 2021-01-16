@@ -1,5 +1,10 @@
 # lua 执行器
 
+## 环境要求
+
+`npm install cmake-js -g`
+`cmake`
+
 ## 安装
 
 `npm install @aimelo/lua --save`

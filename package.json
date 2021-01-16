@@ -1,6 +1,6 @@
 {
     "name": "@aimelo/lua",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "lua node binding",
     "main": "index.js",
     "keywords": [
