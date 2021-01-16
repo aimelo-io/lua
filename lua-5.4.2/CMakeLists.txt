@@ -33,13 +33,12 @@ set(LUA_LIB_SRCS
     "src/linit.c"
 )
 #TODO: Redo this with find_package
-find_library(LIBM m)
-if(NOT LIBM)
-    message(FATAL_ERROR "libm not found and requred by lua")
-endif()
+# find_library(LIBM m)
+# if(NOT LIBM)
+#     message(FATAL_ERROR "libm not found and requred by lua")
+# endif()
 add_library(lua_static STATIC ${LUA_LIB_SRCS})
 set_target_properties(lua_static PROPERTIES OUTPUT_NAME "lua")
-target_link_libraries(lua_static INTERFACE ${LIBM})
 target_include_directories(lua_static PUBLIC "include")
 set(LUA_DEFINITIONS)
 if(UNIX)
@@ -52,29 +51,8 @@ endif()
 target_compile_definitions(lua_static 
     PUBLIC ${LUA_DEFINITIONS}
 )
-target_compile_options(lua_static
-    PRIVATE "-Wall" "-Wextra" "-fPIC"
-)
-
-if(LUA_BUILD_BINARY)
-    include(CheckIncludeFile)
-    CHECK_INCLUDE_FILE("readline/readline.h" HAVE_READLINE_READLINE_H)
-
-
-    add_executable(lua "src/lua.c")
-    target_link_libraries(lua PUBLIC lua_static)
-    set_target_properties(lua PROPERTIES 
-        RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}
-    )
-    if (HAVE_READLINE_READLINE_H)
-        target_compile_definitions(lua PUBLIC "LUA_USE_READLINE")
-        target_link_libraries(lua PUBLIC readline)
-    endif()
-endif()
-if(LUA_BUILD_COMPILER)
-    add_executable(luac "src/luac.c")
-    target_link_libraries(luac PUBLIC lua_static)
-    set_target_properties(luac PROPERTIES 
-        RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}
+if(UNIX)
+    target_compile_options(lua_static
+        PRIVATE "-Wall" "-Wextra" "-fPIC"
     )
 endif()

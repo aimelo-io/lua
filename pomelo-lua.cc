@@ -44,12 +44,12 @@ Napi::Value PomeloLua::DoString(const Napi::CallbackInfo &info)
     if (ret)
     {
         char error[127];
-        sprintf(error, "lua exec error: %d", ret);
+        snprintf(error, 100, "lua exec error: %d", ret);
         Napi::TypeError::New(env, error)
             .ThrowAsJavaScriptException();
     }
     lua_getglobal(m_luaState, "result");
-    const int64_t result = lua_tointeger(m_luaState, -1);
+    const int result = lua_tonumber(m_luaState, -1);
     lua_getglobal(m_luaState, "message");
     const char *message = lua_tostring(m_luaState, -1);
     Napi::Object resp = Napi::Object::New(env);
