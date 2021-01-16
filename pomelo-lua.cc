@@ -20,12 +20,6 @@ PomeloLua::PomeloLua(const Napi::CallbackInfo &info) : Napi::ObjectWrap<PomeloLu
 {
     Napi::Env env = info.Env();
     Napi::HandleScope scope(env);
-
-    if (info.Length() < 1 || !info[0].IsNumber())
-    {
-        Napi::TypeError::New(env, "Arguments must be (value).")
-            .ThrowAsJavaScriptException();
-    }
     m_luaState = luaL_newstate();
 }
 
@@ -35,7 +29,7 @@ Napi::Value PomeloLua::DoString(const Napi::CallbackInfo &info)
     Napi::HandleScope scope(env);
     if (info.Length() < 1 || !info[0].IsString())
     {
-        Napi::TypeError::New(env, "Arguments must be (value).")
+        Napi::TypeError::New(env, "Arguments[0] must be (string).")
             .ThrowAsJavaScriptException();
     }
     lua_settop(m_luaState, 0);

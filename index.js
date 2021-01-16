@@ -1,1 +1,1 @@
-modules.exports = require('bindings')('pomelolua');
+module.exports = require('bindings')('pomelolua');
