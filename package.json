@@ -1,25 +1,25 @@
 {
-    "name": "@aimelo/lua",
-    "version": "1.0.2",
-    "description": "lua node binding",
-    "main": "index.js",
-    "keywords": [
-        "lua",
-        "lua5.4.2",
-        "node-lua",
-        "node-lua-binding"
-    ],
-    "dependencies": {
-        "bindings": "~1.2.1",
-        "node-addon-api": "^1.0.0"
-    },
-    "scripts": {
-        "install": "cmake-js compile",
-        "test": "cmake-js compile && node test"
-    },
-    "homepage": "https://github.com/aimelo-io/lua",
-    "repository": {
-        "type": "https",
-        "url": "https://github.com/aimelo-io/lua.git"
-    }
+  "name": "@aimelo/lua",
+  "version": "1.0.3",
+  "description": "lua node binding",
+  "main": "index.js",
+  "keywords": [
+    "lua",
+    "lua5.4.2",
+    "node-lua",
+    "node-lua-binding"
+  ],
+  "dependencies": {
+    "bindings": "~1.2.1",
+    "node-addon-api": "^1.0.0"
+  },
+  "scripts": {
+    "install": "cmake-js compile",
+    "test": "cmake-js compile && node test"
+  },
+  "homepage": "https://github.com/aimelo-io/lua",
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/aimelo-io/lua.git"
+  }
 }
